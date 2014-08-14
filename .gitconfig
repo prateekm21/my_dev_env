@@ -1,0 +1,21 @@
+[user]
+	name = Prateek Mehrotra
+	email = prateek.mehrotra@onelogin.com
+[color]
+	ui = auto
+[branch]
+	autosetuprebase = always
+	autosetupmerge = always
+[alias]
+	cbr = rev-parse --symbolic-full-name --abbrev-ref HEAD
+	shove = "!f() { H=$(git cbr) && git push -u origin $H; }; f"
+        ancestor=!bash -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent "${1:-  master}") <(git rev-list --first-parent "${2:-HEAD}") | head -1' -
+        lg=log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+        pp=!f() { git pull; git push; }; f
+        co=checkout
+        cm = commit -m
+
+[push]
+	default = simple
+[rerere]
+	enabled = 1
