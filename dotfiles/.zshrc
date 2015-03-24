@@ -13,6 +13,13 @@ ZSH_THEME="ys-pm"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
 
+#############
+# 
+#  SOURCE ZSH
+#
+#############
+source $ZSH/oh-my-zsh.sh
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
@@ -45,14 +52,10 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew gpg-agent)
+plugins=(git bundle brew gpg-agent)
 
 # User configuration
-
-export PATH=~/.rbenv/shims:/Applications/Postgres.app/Contents/Versions/9.3/bin:$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -78,9 +81,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-if [[ -r ~/.aliasrc ]]; then
-  source ~/.aliasrc
-fi
-
-#source NVM
-source $(brew --prefix nvm)/nvm.sh

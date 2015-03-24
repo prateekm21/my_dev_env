@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "sync dotfiles..."
+
+rm -rf ~/.oh-my-zsh
+cp -R  oh-my-zsh ~
